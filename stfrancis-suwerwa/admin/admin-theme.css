@@ -1,0 +1,340 @@
+/* ==========================================================
+   ST. FRANCIS — CONTENT MANAGER THEME
+   Dresses the content manager in the school's own colours and
+   typefaces, so it matches the website and the offline dashboard.
+
+   Palette and typefaces are identical to assets/css/parts/01-tokens.css.
+   ========================================================== */
+
+:root{
+  --navy:#123499;
+  --navy-deep:#0A1B4D;
+  --navy-ink:#071235;
+  --crimson:#CE140C;
+  --gold:#C9922A;
+  --gold-bright:#EAA918;
+
+  --paper:#F6F4EF;
+  --paper-2:#EDEAE2;
+  --white:#FFFFFF;
+
+  --ink:#12161F;
+  --ink-2:#4A5160;
+  --ink-3:#7A8194;
+  --hair:#DCD8CE;
+
+  --radius:6px;
+  --sans:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+}
+
+/* ----------------------------------------------------------
+   1. TYPEFACES
+   The content manager sets its own font on many pieces, so the
+   family is applied across the board and headings are restored
+   to the school's display face afterwards.
+   ---------------------------------------------------------- */
+#nc-root, #nc-root *,
+body{
+  font-family: var(--sans);
+}
+
+#nc-root h1, #nc-root h2, #nc-root h3,
+#nc-root [class*="CollectionTopHeading"],
+#nc-root [class*="SidebarHeading"]{
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--navy-deep);
+}
+
+/* ----------------------------------------------------------
+   2. SURFACES
+   ---------------------------------------------------------- */
+body,
+#nc-root,
+#nc-root [class*="AppMainContainer"],
+#nc-root [class*="CollectionContainer"]{
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ----------------------------------------------------------
+   3. TOP BAR
+   Navy bar with the gold underline used across the website.
+   ---------------------------------------------------------- */
+#nc-root [class*="AppHeader"]{
+  background: var(--navy-ink);
+  border-bottom: 3px solid var(--gold);
+  box-shadow: 0 1px 12px rgba(7,18,53,.18);
+}
+
+#nc-root [class*="AppHeaderNavLink"],
+#nc-root [class*="AppHeaderNav"] a{
+  color: rgba(255,255,255,.78);
+  font-size: .88rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  border-radius: var(--radius);
+  transition: background .18s, color .18s;
+}
+#nc-root [class*="AppHeaderNavLink"]:hover,
+#nc-root [class*="AppHeaderNav"] a:hover{
+  background: rgba(255,255,255,.10);
+  color: #fff;
+}
+#nc-root [class*="AppHeaderNavLink"][class*="active"]{
+  color: var(--gold-bright);
+  background: rgba(255,255,255,.08);
+}
+
+/* the site logo sitting in the bar */
+#nc-root [class*="AppHeader"] img{
+  height: 38px;
+  width: auto;
+}
+
+/* ----------------------------------------------------------
+   4. SIDEBAR — the list of collections
+   ---------------------------------------------------------- */
+#nc-root [class*="SidebarContainer"]{
+  background: var(--white);
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  padding: 1.1rem .9rem;
+  box-shadow: 0 1px 3px rgba(18,22,31,.04);
+}
+
+#nc-root [class*="SidebarHeading"]{
+  font-size: 1.15rem;
+  color: var(--navy-deep);
+  margin-bottom: .6rem;
+}
+
+#nc-root [class*="SidebarNavLink"]{
+  color: var(--ink-2);
+  font-size: .9rem;
+  border-radius: var(--radius);
+  border-left: 2px solid transparent;
+  padding: .55rem .75rem;
+  transition: background .18s, color .18s, border-color .18s;
+}
+#nc-root [class*="SidebarNavLink"]:hover{
+  background: var(--paper);
+  color: var(--ink);
+}
+#nc-root [class*="SidebarNavLink"][class*="active"]{
+  background: var(--paper);
+  color: var(--navy);
+  font-weight: 600;
+  border-left-color: var(--gold);
+}
+
+/* ----------------------------------------------------------
+   5. CARDS — each editable section
+   ---------------------------------------------------------- */
+#nc-root [class*="ListCard"],
+#nc-root [class*="GridCard"],
+#nc-root [class*="CardBody"]{
+  background: var(--white);
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(18,22,31,.04);
+  transition: border-color .18s, box-shadow .18s, transform .18s;
+}
+#nc-root [class*="ListCard"]:hover,
+#nc-root [class*="GridCard"]:hover{
+  border-color: var(--navy);
+  box-shadow: 0 6px 18px rgba(18,52,153,.10);
+  transform: translateY(-1px);
+}
+
+#nc-root [class*="ListCardLink"],
+#nc-root [class*="CardHeading"]{
+  color: var(--navy-deep);
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+/* the heading strip above a collection */
+#nc-root [class*="CollectionTop"]{
+  background: var(--white);
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(18,22,31,.04);
+}
+#nc-root [class*="CollectionTopHeading"]{
+  font-size: 1.6rem;
+}
+#nc-root [class*="CollectionTopDescription"]{
+  color: var(--ink-2);
+  font-size: .9rem;
+}
+
+/* ----------------------------------------------------------
+   6. BUTTONS
+   Navy for ordinary actions, gold for publishing — the same
+   pairing used on the website and the offline dashboard.
+   ---------------------------------------------------------- */
+#nc-root button,
+#nc-root [class*="ToolbarButton"],
+#nc-root [class*="NewEntryButton"]{
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: .02em;
+  border-radius: var(--radius);
+  transition: background .18s, border-color .18s, color .18s;
+}
+
+#nc-root [class*="NewEntryButton"],
+#nc-root [class*="ToolbarButton"][class*="primary"]{
+  background: var(--navy);
+  color: #fff;
+  border: 1px solid var(--navy);
+}
+#nc-root [class*="NewEntryButton"]:hover,
+#nc-root [class*="ToolbarButton"][class*="primary"]:hover{
+  background: var(--navy-deep);
+  border-color: var(--navy-deep);
+}
+
+/* publish / save — gold, the way the dashboard does it */
+#nc-root [class*="PublishButton"],
+#nc-root [class*="SaveButton"],
+#nc-root button[class*="Publish"]{
+  background: var(--gold-bright);
+  color: var(--navy-ink);
+  border: 1px solid var(--gold-bright);
+}
+#nc-root [class*="PublishButton"]:hover,
+#nc-root [class*="SaveButton"]:hover,
+#nc-root button[class*="Publish"]:hover{
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+#nc-root [class*="DeleteButton"],
+#nc-root button[class*="Delete"]{
+  color: var(--crimson);
+}
+
+/* ----------------------------------------------------------
+   7. FORM FIELDS
+   ---------------------------------------------------------- */
+#nc-root input[type="text"],
+#nc-root input[type="email"],
+#nc-root input[type="number"],
+#nc-root input[type="url"],
+#nc-root textarea,
+#nc-root select,
+#nc-root [class*="ControlContainer"] input,
+#nc-root [class*="ControlContainer"] textarea{
+  background: var(--white);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: .95rem;
+  padding: .6rem .75rem;
+  box-shadow: none;
+  transition: border-color .18s, box-shadow .18s;
+}
+
+#nc-root input:focus,
+#nc-root textarea:focus,
+#nc-root select:focus{
+  outline: none;
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(18,52,153,.13);
+}
+
+#nc-root label,
+#nc-root [class*="FieldLabel"]{
+  color: var(--ink-2);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+#nc-root [class*="FieldLabel"][class*="active"]{
+  color: var(--navy);
+}
+
+#nc-root [class*="ControlHint"],
+#nc-root [class*="FieldHint"]{
+  color: var(--ink-3);
+  font-size: .8rem;
+  font-style: normal;
+}
+
+/* the white panel each field group sits on */
+#nc-root [class*="ControlPaneContainer"],
+#nc-root [class*="EditorControlBar"]{
+  background: var(--white);
+}
+
+/* ----------------------------------------------------------
+   8. EDITOR CHROME
+   ---------------------------------------------------------- */
+#nc-root [class*="EditorToolbar"]{
+  background: var(--white);
+  border-bottom: 1px solid var(--hair);
+}
+
+#nc-root [class*="EditorContainer"]{
+  background: var(--paper);
+}
+
+/* repeatable list items (news, fees, results and so on) */
+#nc-root [class*="ListItem"],
+#nc-root [class*="ObjectWidgetTopBar"]{
+  background: var(--paper);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+}
+
+/* ----------------------------------------------------------
+   9. LOGIN SCREEN
+   ---------------------------------------------------------- */
+#nc-root [class*="AuthenticationPage"]{
+  background: var(--paper);
+}
+
+#nc-root [class*="LoginButton"],
+#nc-root [class*="AuthenticationPage"] button{
+  background: var(--navy);
+  color: #fff;
+  border: 1px solid var(--navy);
+  border-radius: var(--radius);
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: .02em;
+  padding: .7rem 1.4rem;
+}
+#nc-root [class*="LoginButton"]:hover,
+#nc-root [class*="AuthenticationPage"] button:hover{
+  background: var(--navy-deep);
+  border-color: var(--navy-deep);
+}
+
+/* ----------------------------------------------------------
+   10. NOTIFICATIONS
+   ---------------------------------------------------------- */
+#nc-root [class*="Toast"],
+#nc-root [class*="Notification"]{
+  border-radius: var(--radius);
+  font-family: var(--sans);
+}
+
+/* ----------------------------------------------------------
+   11. SCROLLBARS — a small touch that ties it together
+   ---------------------------------------------------------- */
+#nc-root ::-webkit-scrollbar{ width: 10px; height: 10px; }
+#nc-root ::-webkit-scrollbar-track{ background: var(--paper-2); }
+#nc-root ::-webkit-scrollbar-thumb{
+  background: var(--ink-3);
+  border-radius: 20px;
+  border: 2px solid var(--paper-2);
+}
+#nc-root ::-webkit-scrollbar-thumb:hover{ background: var(--navy); }

@@ -1,0 +1,56 @@
+/* ==========================================================
+   ST. FRANCIS — PREVIEW PANEL
+   The panel on the right of the editor sits in its own frame,
+   so it needs its own copy of the school's styling.
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Public+Sans:wght@400;600&display=swap");
+
+body{
+  background:#F6F4EF;
+  color:#12161F;
+  font-family:"Public Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:15px;
+  line-height:1.6;
+  padding:1.6rem;
+}
+
+h1,h2,h3,h4{
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:400;
+  line-height:1.2;
+  color:#0A1B4D;
+  margin:0 0 .5rem;
+}
+
+h1{ font-size:1.7rem; }
+h2{ font-size:1.35rem; }
+h3{ font-size:1.1rem; }
+
+p{ margin:0 0 .9rem; color:#4A5160; }
+
+a{ color:#123499; }
+
+strong{ color:#12161F; }
+
+hr{
+  border:0;
+  border-top:1px solid #DCD8CE;
+  margin:1.4rem 0;
+}
+
+img{ max-width:100%; display:block; border-radius:6px; }
+
+ul,ol{ color:#4A5160; padding-left:1.2rem; }
+
+blockquote{
+  margin:0 0 1rem;
+  padding:.2rem 0 .2rem 1rem;
+  border-left:3px solid #C9922A;
+  font-family:"Fraunces",Georgia,serif;
+  color:#0A1B4D;
+}
+
+table{ border-collapse:collapse; width:100%; font-size:.9rem; }
+th,td{ border:1px solid #DCD8CE; padding:.45rem .6rem; text-align:left; }
+th{ background:#EDEAE2; color:#0A1B4D; font-weight:600; }
