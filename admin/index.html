@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Content manager &mdash; St. Francis Girls' High School</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<style>
+  body{ margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  .boot{ display:flex; align-items:center; justify-content:center; min-height:100vh;
+         flex-direction:column; gap:1rem; color:#4A5160; background:#F6F4EF;
+         text-align:center; padding:2rem; }
+  .boot img{ height:80px; }
+  .boot p{ margin:0; max-width:46ch; line-height:1.6; }
+  .boot a{ color:#123499; }
+  .boot small{ color:#7A8194; }
+</style>
+</head>
+<body>
+<script>
+  /* Opened by double-clicking on a computer (file://)? The Netlify CMS
+     cannot run here, so send the user straight to the offline dashboard. */
+  if (location.protocol === 'file:') {
+    location.replace('../dashboard/index.html');
+  }
+</script>
+<div class="boot" id="boot">
+  <img src="../assets/img/crest.png" alt="">
+  <p>Loading the content manager&hellip;</p>
+  <p><small>This page needs the site to be live on Netlify. To edit content on
+  this computer, use <a href="../dashboard/index.html">the offline dashboard</a>
+  instead.</small></p>
+</div>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://unpkg.com/decap-cms@^3.3.0/dist/decap-cms.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    var b = document.getElementById('boot');
+    if (b) setTimeout(function () { b.remove(); }, 2000);
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function (user) {
+        if (!user) {
+          window.netlifyIdentity.on('login', function () { document.location.href = '/admin/'; });
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>

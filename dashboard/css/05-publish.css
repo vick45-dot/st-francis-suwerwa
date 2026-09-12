@@ -1,0 +1,25 @@
+/* ======================================================
+   PUBLISH PANEL, TOAST, MOTION
+   ====================================================== */
+/* ---------- publish panel ---------- */
+.steps{ counter-reset:s; list-style:none; padding:0; margin:1rem 0 0; }
+.steps li{ counter-increment:s; position:relative; padding-left:2.2rem;
+  margin-bottom:1rem; }
+.steps li::before{ content:counter(s); position:absolute; left:0; top:.05rem;
+  width:1.55rem; height:1.55rem; border-radius:50%; background:var(--navy);
+  color:#fff; display:grid; place-items:center; font-size:.8rem; font-weight:600; }
+code{ background:var(--paper); border:1px solid var(--hair); border-radius:4px;
+  padding:.1rem .35rem; font-size:.85em; }
+.warn{ border-left:3px solid var(--gold); background:#FDF8EC;
+  padding:.9rem 1.1rem; border-radius:0 var(--radius) var(--radius) 0;
+  font-size:.88rem; margin-top:1rem; }
+
+.toast{ position:fixed; left:50%; bottom:1.5rem; transform:translate(-50%,150%);
+  background:var(--navy-ink); color:#fff; padding:.75rem 1.3rem;
+  border-radius:var(--radius); font-size:.88rem; z-index:99;
+  transition:transform .3s cubic-bezier(.4,.14,.3,1); box-shadow:0 8px 24px rgba(0,0,0,.2); }
+.toast.on{ transform:translate(-50%,0); }
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
